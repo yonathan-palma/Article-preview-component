@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+    --white: #ffffff;
+}
+
+body{
+    background-color: var(--LightGrayishBlue);
+    font-family: 'Manrope', sans-serif;
+    
+}
+.container{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+.card{
+    width: 50%;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    box-shadow: 10px 16px 25px -15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 16px 25px -15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 16px 25px -15px rgba(0,0,0,0.75);
+}
+.card_img{
+    background-image: url(../images/drawers.jpg);
+    background-size: cover;
+    border-radius: 10px 0 0 10px;
+}
+/* .card_img img{
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+} */
+.card .card_description{
+    padding: 32px;
+    display: grid;
+    grid-row-gap: 16px;
+}
+
+.card .card_description h1{
+    color: var(--VeryDarkGrayishBlue);
+    font-size: 20px;
+}
+
+.card .card_description p{
+    font-size: 13px;
+    color: var(--DesaturatedDarkBlue);
+}
+.card .card_description .user{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+}
+.user .user_info{
+    display: flex;
+}
+.user .user_avatar{
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 1em;
+}
+.user_info h2{
+    font-size: 13px;
+    color: var(--VeryDarkGrayishBlue);   
+}
+.user .user_compartir{
+    background-color: var(--LightGrayishBlue);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+    cursor: pointer;
+    z-index: 20;
+}
+.user .black{
+    background-color: var(--DesaturatedDarkBlue);
+}
+.tooltip{
+    position: absolute;
+    top: -150%;
+    left: 60%;
+    visibility: hidden;
+    background-color: var(--VeryDarkGrayishBlue);
+    width: 70%;
+    border-radius: 10px;
+    z-index: 10;
+}
+.tooltip .social_icons{
+    padding: 12px 36px;
+    box-sizing: content-box;
+    display: flex;
+    justify-content: space-between;
+}
+.tooltip .social_icons h2{
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--DesaturatedDarkBlue);
+    
+}
+.tooltip::after{
+    content: "";
+    position: absolute;
+    left: calc(50% - 15px);
+    background-color: var(--VeryDarkGrayishBlue);
+    width: 30px;
+    height: 30px;
+    /* clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); */
+    clip-path: polygon(49% 45%, 0 0, 100% 0);
+}
+
+@media only screen and (max-width: 425px) {
+    .card{
+        width: 90%;
+        grid-template-columns: auto;
+        grid-template-rows:  250px 1fr;
+        /* aqui sin entender por que cn se desborda el contenido si se colocan porcentajes */
+        margin: 20% 0;
+    }
+    .card_img{
+        border-radius: 10px 10px 0 0;
+    }
+    .card .card_description .user{
+        margin-top: 2em;
+    
+    }
+    .card .card_description{
+        padding: 32px 32px 22px 32px ;
+    }
+    .user .user_compartir{
+        width: 35px;
+        height: 35px;
+    }
+    .tooltip{
+        top: -22px;
+        left: -32px;
+        width: 90vw;
+        border-radius: 0 0 10px 10px;
+        padding: 22px;
+        box-sizing: border-box;
+    }
+    .tooltip .social_icons{
+        justify-content: space-between;
+        padding: 12px 40% 12px 0;
+    }
+}
