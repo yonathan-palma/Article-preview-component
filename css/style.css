@@ -155,3 +155,7 @@ body{
         padding: 12px 40% 12px 0;
     }
 }
+
+/* aqui para acomodar la imagen en total a un cotenendor adaptado */
+/* object-fit: cover;
+object-position: left 75%; */
